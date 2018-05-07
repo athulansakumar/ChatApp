@@ -1,0 +1,32 @@
+<form class="col-md-6">
+    <div id="errorMessage" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      <p>{{errorMessage}}</p>
+    </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="inputFname">First Name</label>
+        <input type="text" class="form-control" id="inputFname" placeholder="First Name" name="firstName" [(ngModel)]="user.firstName">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputLname">Last Name</label>
+        <input type="text" class="form-control" id="inputLname" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName">
+    </div>
+  </div>
+  <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" [(ngModel)]="user.email">
+  </div>
+  <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" [(ngModel)]="user.password">
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Remember Me
+      </label>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="signUp();">Sign Up</button>
+</form>
