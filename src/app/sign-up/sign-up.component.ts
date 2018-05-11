@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../models/user-model';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,13 +19,13 @@ export class SignUpComponent implements OnInit {
     }
 
     signUp() {
-        alert(JSON.stringify(this.user));
         this.userService.addNewUser(this.user).subscribe((res)=>{
             if(res.status=='ok'){
                 this.errorMessage="Sign up Completed";
             }else{
                 this.errorMessage="Sign up Failed";
             }
+
         },(e) => {
             console.log(e);
         });
